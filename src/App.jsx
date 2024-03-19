@@ -15,7 +15,7 @@ import {
 import { Spinner } from '@chakra-ui/react'
 import './App.css'
 import HomePage from './Components/HomePage'
-import AuthPage from './AuthPage'
+import AuthPage from './Components/AuthPage'
 
 
 
@@ -27,24 +27,6 @@ function App() {
     <Route path='/' element={<HomePage/>}/>
     <Route path='auth' element={<AuthPage/>}/>
     </Routes>
-    <Spinner />
-    <Alert status='success'>
-      <AlertIcon />
-      {/* <AlertTitle>Your browser is outdated!</AlertTitle> */}
-      <AlertDescription>succsesfully added your api</AlertDescription>
-    </Alert>
-    
-    <Popover>
-  <PopoverTrigger>
-    <Button>Trigger</Button>
-  </PopoverTrigger>
-  <PopoverContent>
-    <PopoverArrow />
-    <PopoverCloseButton />
-    <PopoverHeader>Confirmation!</PopoverHeader>
-    <PopoverBody>Are you sure you want to have that milkshake?</PopoverBody>
-  </PopoverContent>
-</Popover>
 </>
   )
 }
