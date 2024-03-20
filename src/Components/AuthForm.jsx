@@ -1,24 +1,59 @@
 import { Box, VStack, Image, Input, Button, Flex, Text, Link } from "@chakra-ui/react";
 import logoAuth from "/logo.png"
 import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const AuthForm = () => {
     const [isLogin, isSetLogin] = useState(true);
+    const [user,setNewUser] = useState({
+        email:"",
+        password:"",
+    })
+    
 
+    const [userSignUp,setNewUserSignUp] = useState({
+        email:"",
+        password:"",
+        fullName:"",
+        username:""
+
+    })
+    
+    const navigate = useNavigate();
     const register = (e) => {
         e.preventDefault();
         isSetLogin(!isLogin)
     }
 
-
+    
+    const submitRegister =()=>{
+        console.log(userSignUp);
+    }
+    
+    const handleAuth = ()=>{
+        if(!user.password || !user.email){
+            alert("input all details ");
+            return
+        }
+        else{
+            alert("welcome " + user.email);
+            navigate("/")
+            return
+        }
+        
+    }
+    const submitLogin =()=>{
+     console.log(Boolean(user.password),Boolean(user.email));
+     handleAuth()
+    }
     return <>
 
         {isLogin ? <Box border={"1px solid gray"} borderRadius={4} padding={5}>
             <VStack spacing={4}>
                 <Image src={logoAuth} h={24} />
-                <Input placeholder='Email' type="email" />
-                <Input placeholder='Password' type="password" />
-                <Button colorScheme='teal' size='sm' width={"100%"}>
+                <Input placeholder='Email' type="email" value={user.email} onChange={(e)=>{setNewUser({...user,email:e.target.value}) }}/>
+                <Input placeholder='Password' type="password" value={user.password} onChange={(e)=>{setNewUser({...user,password:e.target.value}) }} />
+                <Button colorScheme='teal' size='sm' width={"100%"} onClick={submitLogin}>
                     Log in
                 </Button>
                 <Flex alignItems={"center"} justifyContent={"center"} my={4} gap={1} w={"full"}>
@@ -41,11 +76,11 @@ const AuthForm = () => {
         </Box> : <Box border={"1px solid gray"} borderRadius={4} padding={5}>
             <VStack spacing={4}>
                 <Image src={logoAuth} h={24} />
-                <Input placeholder='Email' type="email" />
-                <Input placeholder='Username' />
-                <Input placeholder='Full name' />
-                <Input placeholder='Password' type="password" />
-                <Button colorScheme='teal' size='sm' width={"100%"}>
+                <Input placeholder='Email' type="email" value={userSignUp.email} onChange={(e)=>{setNewUserSignUp({...userSignUp,email:e.target.value})}}/>
+                <Input placeholder='Username' value={userSignUp.username} onChange={(e)=>{setNewUserSignUp({...userSignUp,username:e.target.value})}}/>
+                <Input placeholder='Full name' value={userSignUp.fullName} onChange={(e)=>{setNewUserSignUp({...userSignUp,fullName:e.target.value})}} />
+                <Input placeholder='Password' type="password" value={userSignUp.password} onChange={(e)=>{setNewUserSignUp({...userSignUp,password:e.target.value})}}/>
+                <Button colorScheme='teal' size='sm' width={"100%"} onClick={submitRegister}>
                     Sign up
                 </Button>
                 <Flex alignItems={"center"} justifyContent={"center"} my={4} gap={1} w={"full"}>
