@@ -27,7 +27,7 @@ const AuthForm = () => {
 
     
     const submitRegister =()=>{
-        console.log(userSignUp);
+        // console.log(userSignUp);
     }
     
     const handleAuth = ()=>{
@@ -43,7 +43,6 @@ const AuthForm = () => {
         
     }
     const submitLogin =()=>{
-     console.log(Boolean(user.password),Boolean(user.email));
      handleAuth()
     }
     return <>
