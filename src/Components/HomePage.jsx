@@ -11,7 +11,7 @@ const HomePage =()=>{
             </Box>
             {/* right suggested people */}
             <Box flex={3} mr={20} display={{base:"none", lg:"block"}} maxW={"300px"} 
-            h={"400px"}
+            height={"300px"}
             position={"sticky"}
             top={"30px"}
             left={"0px"}

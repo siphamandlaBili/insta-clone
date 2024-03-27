@@ -25,7 +25,8 @@ const Sidebar = () => {
         },
         {
             icon: <Avatar name='Dan Abrahmov' size='sm' src='https://bit.ly/dan-abramov' />,
-            text: "Profile"
+            text: "Profile",
+            links: "/:uid/profile"
         },
     ]
 

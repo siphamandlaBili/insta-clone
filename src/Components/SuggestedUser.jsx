@@ -1,6 +1,14 @@
-import { Box, Link, Avatar, Text, Flex, textDecoration } from "@chakra-ui/react";
+import { Box, Link, Avatar, Text, Flex,Button } from "@chakra-ui/react";
+import { useState } from "react";
+import { FaPlus } from "react-icons/fa";
 
 const SuggestedUser =()=>{
+    const [isFollowed,setFollowed] = useState(false);
+
+    const followHandle = () =>{
+        setFollowed(!isFollowed)
+    }
+
     return <Flex w={"full"} display={"flex"} flexDirection={"row"} justifyContent={"space-between"} alignItems={"center"}>
     <Flex alignItems={"center"} gap={2}>
         <Avatar
@@ -13,7 +21,9 @@ const SuggestedUser =()=>{
         <Text fontSize={"16px"} color={"#4b4b4be7"}>1.2k followers</Text>
         </Flex>
     </Flex>
-    <Link  color={"blue.400"} fontSize={"16px"} fontWeight={"medium"} _hover={{textDecoration:"none",color:"white"}} >unfollow</Link>
+    <Button color={"blue.400"} variant='link' fontWeight={300} onClick={followHandle} _hover={{textDecor:"none",color:"white"}}>
+    {isFollowed? "unfollow": <FaPlus />}
+  </Button>
 </Flex>
 }
 

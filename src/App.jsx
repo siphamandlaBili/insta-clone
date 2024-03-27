@@ -1,22 +1,11 @@
-
-import { Alert, AlertIcon, AlertTitle, AlertDescription, Hide, } from '@chakra-ui/react'
 import { Route,Routes } from 'react-router-dom'
-import {
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverHeader,
-  PopoverBody,
-  PopoverFooter,
-  PopoverArrow,
-  PopoverCloseButton,
-  PopoverAnchor,Button
-} from '@chakra-ui/react'
-import { Spinner } from '@chakra-ui/react'
 import './App.css'
 import HomePage from './Components/HomePage'
 import AuthPage from './Components/AuthPage'
 import PageLayout from './Layout/pageLayouts/PageLayout'
+import ProfilePage from './Components/ProfilePage'
+
+
 
 
 
@@ -26,7 +15,8 @@ function App() {
     <PageLayout>
     <Routes>
     <Route path='/' element={<HomePage/>}/>
-    <Route path='auth' element={<AuthPage/>}/>
+    <Route path='/auth' element={<AuthPage/>}/>
+    <Route path='/:uid/profile' element={<ProfilePage/>}/>
     </Routes>
     </PageLayout>
   )
