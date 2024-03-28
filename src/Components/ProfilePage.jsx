@@ -4,7 +4,7 @@ import ProfileTabs from "./ProfileTabs";
 import ProfilePosts from "./ProfilePosts";
 
 const ProfilePage =()=>{
-    return <Container minxW={"100vw"} py={5} display={"flex"} flexDir={"column"} alignItems={"center"} >
+    return <Container minW={"65vw"} py={5} display={"flex"} flexDir={"column"} alignItems={"center"} >
     <Flex py={10} px={4} pl={{base:4,md:10}} w={"full"} mx={"auto"} flexDirection={"column"} >
     <ProfileHeader/>
     </Flex>

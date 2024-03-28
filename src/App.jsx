@@ -5,11 +5,6 @@ import AuthPage from './Components/AuthPage'
 import PageLayout from './Layout/pageLayouts/PageLayout'
 import ProfilePage from './Components/ProfilePage'
 
-
-
-
-
-
 function App() {
   return(
     <PageLayout>
