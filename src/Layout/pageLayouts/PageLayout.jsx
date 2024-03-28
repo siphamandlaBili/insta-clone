@@ -13,7 +13,7 @@ const PageLayout = ({ children }) => {
         </Box> : null}
 
         {/* page right */}
-        <Box flex={1} w={{base:"calc(100% - 70px)",md:"calc(100% - 240px)"}}  ml={"0px"}>
+        <Box flex={1} w={{base:"100%",md:"calc(100% - 240px)"}}  ml={"0px"}>
             {children}
         </Box>
     </Flex>

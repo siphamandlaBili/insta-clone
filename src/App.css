@@ -40,3 +40,21 @@
 .read-the-docs {
   color: #888;
 }
+
+.css-5ori8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 0 !important;
+  padding-bottom: var(--chakra-space-10);
+  border-top: 1px solid;
+  border-color: transparent !important;
+  -webkit-margin-start: auto;
+  margin-inline-start: auto;
+  -webkit-margin-end: auto;
+  margin-inline-end: auto;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
