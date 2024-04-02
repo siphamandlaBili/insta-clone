@@ -3,6 +3,7 @@ import { Link as RouterLink } from "react-router-dom"
 import { InstagramLogo, InstagramMobileLogo,SearchLogo,NotificationsLogo,CreatePostLogo} from "../assets/constants";
 import { AiFillHome } from "react-icons/ai";
 import { IoLogOutOutline } from "react-icons/io5";
+import useLogout from "./hooks/useLogout";
 
 const Sidebar = () => {
     const sidebarItems = [
@@ -29,7 +30,7 @@ const Sidebar = () => {
             links: "/:uid/profile"
         },
     ]
-
+      const {handleLogout,loading,error} = useLogout();  
     return <Box height={{base:"100vh"}} position={"sticky"} top={0} left={0} borderRight={"1px solid"} borderColor={"whiteAlpha.300"} py={8} px={{ base: 2, md: 4 }}>
         <Flex flexDirection={"column"} gap={10} w={"full"} height={"full"}>
             <Link to={"/"} as={RouterLink} pl={2} display={{ base: "none", md: "block" }}><InstagramLogo /></Link>
@@ -64,12 +65,14 @@ const Sidebar = () => {
                    openDelay={500}
                    display={{base:"block",md:"none"}}
                 >
-                    <Link display={"flex"} to={"/auth"} as={RouterLink} alignItems={"center"} gap={4} _hover={{bg:"whiteAlpha.300"}} borderRadius={6} p={2} w={"full"}>
+                    <Flex display={"flex"} alignItems={"center"} gap={4} _hover={{bg:"whiteAlpha.300"}} borderRadius={6} p={2} w={"full"}
+                    onClick={handleLogout}
+                    >
                     <IoLogOutOutline fontSize={"2rem"} fontWeight={"700"}/>
                         <Box display={{base:"none",md:"block"}}>
                             Logout
                         </Box>
-                    </Link>
+                    </Flex>
                 </Tooltip>
          </Flex>
         </Flex>

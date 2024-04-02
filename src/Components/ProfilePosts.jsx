@@ -5,13 +5,13 @@ import ProfilePost from "./ProfilePost";
 const ProfilePosts = () => {
     const [isLoading, setLoading] = useState(true);
 
-    console.log(isLoading)
+  
     useEffect(() => {
         setTimeout(() => {
             setLoading(false)
         }, 2000)
     }, [])
-    console.log(isLoading)
+   
 
 
     return <Grid templateColumns={{ sm: "repeat(1,1fr)", md: "repeat(3,1fr)" }} gap={1} columnGap={1}>

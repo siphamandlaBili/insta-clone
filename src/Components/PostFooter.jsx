@@ -3,10 +3,10 @@ import { Box, Flex, Text, Input, InputGroup, Skeleton, SkeletonCircle, InputRigh
 import { CommentLogo, NotificationsLogo, UnlikeLogo } from "../assets/constants";
 
 
-const PostFooter = ({ username, likesC, isloaded }) => {
-    console.log(isloaded)
+const PostFooter = ({ username, likesC, isloaded,isProfilePage }) => {
+    
     const [liked, setLiked] = useState(false);
-    const [likes, setLikes] = useState(likesC);
+    const [likes, setLikes] = useState(20);
 
     const handleLike = () => {
         if (liked) {
@@ -19,7 +19,7 @@ const PostFooter = ({ username, likesC, isloaded }) => {
         }
     }
     return <>
-        <Flex flexDir={"column"} gap={4} w={"full"} pt={0} mt={2}>
+        <Flex flexDir={"column"} gap={4} w={"full"} pt={0} mt={2} marginTop={"auto"}>
             <Flex gap={2}>
                 <Skeleton isLoaded={isloaded}>
                     <Box onClick={handleLike} cursor={"pointer"} fontSize={18}>
@@ -35,23 +35,24 @@ const PostFooter = ({ username, likesC, isloaded }) => {
             <Flex flexDir={"column"} alignItems={"flex-start"}>
                 <Skeleton isLoaded={isloaded}>
                     <Text as={"span"} fontWeight={600} fontSize={"small"}>
-                        {likesC ? likes : 0} likes
+                        {likes} likes
                     </Text>
                 </Skeleton>
 
 
 
                 <Flex fontSize="sm" fontWeight={700} flexDirection={"column"}>
+                    {!isProfilePage && <Skeleton isLoaded={isloaded}>
                     <Skeleton isLoaded={isloaded}>
                         <Text fontWeight={400} textAlign={"left"}>
-                            {username}&nbsp;&nbsp; lifes good🚀🚀
+                            {username}&nbsp;lifes good🚀🚀
                         </Text>
                     </Skeleton>
-                    <Skeleton isLoaded={isloaded}>
                         <Text fontSize={"sm"} color={"gray"} textAlign={"left"}>
                             view all 4 comments
                         </Text>
-                    </Skeleton>
+                    </Skeleton>}
+                    
                 </Flex>
             </Flex>
         </Flex>

@@ -34,6 +34,23 @@
   color: #888;
 }
 
+::-webkit-scrollbar{
+  width: 5px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track{
+  background-color: gray;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: rgb(38, 37, 37);
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: rgb(201, 192, 192);
+}
 .css-5ori8 {
   display: -webkit-box;
   display: -webkit-flex;
